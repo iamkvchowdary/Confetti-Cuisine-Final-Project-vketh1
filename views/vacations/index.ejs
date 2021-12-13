@@ -1,0 +1,36 @@
+<h2 class="center">Culinary Vacations Package Table</h2>
+<div class="center">
+  <a class="button" href="/vacations/new">Create Culinary Vacations Package</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% vacations.forEach(vacation => { %>
+    <tr>
+      <td>
+        <a href="<%= `/vacations/${vacation._id}` %>">
+          <%= vacation.title %>
+        </a>
+      </td>
+      <td>
+        <%= vacation.description %>
+      </td>
+      <td>
+        <a href="<%=`vacations/${vacation._id}/edit`%>">
+          <input type="radio" name="<%=`${vacation._id}`%>"/>
+        </a>
+      </td>
+      <td>
+        <a href="<%= `vacations/${vacation._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')" a><input type="radio" name="<%=`${vacation._id}`%>"/></a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

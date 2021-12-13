@@ -1,0 +1,28 @@
+<div class="data-form">
+    <form class="form-signin" action="<%=`/vacations/${vacation._id}/update?_method=PUT`%>" method="POST">
+        <h2 class="form-signin-heading">Edit Vacation:</h2>
+        <label for="inputTitle">Title</label>
+        <input type="text" name="title" id="inputTitle" class="form-control" value="<%= vacation.title %>" placeholder="Title" autofocus>
+        <label for="inputDescription">Description</label>
+        <input type="text" name="description" id="inputDescription" class="form-control" value="<%= vacation.description %>" placeholder="Description">
+        <label for="inputCuisine">Cuisine</label>
+        <input type="text" name="cuisine" id="inputTitle" class="form-control" value="<%= vacation.cuisine %>" placeholder="Cuisine" autofocus>
+
+        <label for="inputMaxTravelers">Max Travelers</label>
+        <input type="text" name="maxTravelers" id="inputMaxTravelers" pattern="\d*" class="form-control" value="<%= vacation.maxTravelers %>" placeholder="Max Travelers" required>
+        <label for="inputCost">Cost</label>
+        <input type="text" name="cost" id="inputCost" pattern="\d*" class="form-control" value="<%= vacation.cost %>" placeholder="Cost" required>
+        <label for="inputHeroImage">Hero Image</label>
+        <input type="text" name="heroImage" id="inputDescription" class="form-control" value="<%= vacation.heroImage %>" placeholder="Hero Image">
+        <label for="inputDestination">Destination</label>
+        <input type="text" name="destination" id="inputDestination" class="form-control" value="<%= vacation.destination %>" placeholder="Destination" required>
+        <label for="inputDepartureLocation">Departure Location</label>
+        <input type="text" name="departureLocation" id="inputDepartureLocation" class="form-control" value="<%= vacation.departureLocation %>" placeholder="Departure Location" required>
+        <label for="inputDepartureDate">Departure Date</label>
+        <input type="text" name="departureDate" id="inputDepartureDate"  class="form-control" value="<%= vacation.departureDate %>" placeholder="Departure Date" required>
+        <label for="inputReturnDate">Return Date</label>
+        <input type="text" name="returnDate" id="inputReturnDate"  class="form-control" value="<%= vacation.returnDate%>" placeholder="Return Date" required>
+        <br />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+    </form>
+</div>

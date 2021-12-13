@@ -1,0 +1,82 @@
+<div style="padding-bottom: 5%">
+    <h1 class="center">Course Data for
+        <%= vacation.title %>
+    </h1>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="../images/<%=vacation.heroImage%>" alt="../images/<%=vacation.heroImage%>"/>
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <td>
+                <%= vacation.title%>
+                <%console.log(vacation);%>
+            </td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <%= vacation.description%>
+            </td>
+        </tr>
+        <tr>
+            <th>Max Travellers</th>
+            <td>
+                <%= vacation.maxTravelers%>
+            </td>
+        </tr>
+        <tr>
+            <th>Cost</th>
+            <td>$
+                <%= vacation.cost%>
+            </td>
+        </tr>
+        <tr>
+            <th>Cuisine</th>
+            <td>
+                <%= vacation.cuisine %>
+            </td>
+        </tr>
+        <tr>
+            <th>Destination</th>
+            <td>
+                <%= vacation.destination %>
+            </td>
+        </tr>
+        <tr>
+            <th>Departure Location</th>
+            <td>
+                <%= vacation.departureLocation %>
+            </td>
+        </tr>
+        <tr>
+            <th>Departure Date</th>
+            <td>
+                <%= vacation.departureDate %>
+            </td>
+        </tr>
+        <tr>
+            <th>Return Date</th>
+            <td>
+                <%= vacation.returnDate%>
+            </td>
+        </tr>
+    </table>
+
+    <% if (loggedIn) { %>
+    <div>
+        <a class="button" href="<%=`/vacations/${vacation._id}/edit`%>">
+            Edit Culinary Vacations Package Details
+        </a>
+    </div>
+
+    <div>
+        <a class="button" href="<%= `/vacations/${vacation._id}/delete?_method=DELETE`%>" onclick="return confirm('Are you sure you want to delete this record?')" a>Delete</a>
+    </div>
+    <%}%>
+    <div>
+        <a class="button" href="/vacations">View all vacations</a>
+    </div>
+</div>
